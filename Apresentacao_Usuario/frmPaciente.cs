@@ -43,18 +43,18 @@ namespace Apresentacao_Usuario
                 String P11 = dgvCorrecao[1, 5].Value.ToString();
                 String P12 = dgvCorrecao[2, 5].Value.ToString();
 
-                txtParam1.Text = P1;   
-                txtParam1_.Text = P2;  
-                txtParam2.Text = P3;   
-                txtParam2_.Text = P4;  
-                txtParam3.Text = P5;   
-                txtParam3_.Text = P6;  
-                txtParam4.Text = P7;   
-                txtParam4_.Text = P8;  
-                txtParam5.Text = P9;   
-                txtParam5_.Text = P10; 
-                txtParam6.Text = P11;  
-                txtParam6_.Text = P12; 
+                txtParam1.Text = P1;
+                txtParam1_.Text = P2;
+                txtParam2.Text = P3;
+                txtParam2_.Text = P4;
+                txtParam3.Text = P5;
+                txtParam3_.Text = P6;
+                txtParam4.Text = P7;
+                txtParam4_.Text = P8;
+                txtParam5.Text = P9;
+                txtParam5_.Text = P10;
+                txtParam6.Text = P11;
+                txtParam6_.Text = P12;
             }
             catch (Exception)
             {
@@ -72,7 +72,7 @@ namespace Apresentacao_Usuario
             da.Fill(dt);
             dgvPaciente.DataSource = dt;
         }
-       
+
         private void MostraParametros()
         {
             Conect conect = new Conect();
@@ -238,7 +238,7 @@ namespace Apresentacao_Usuario
         #region Comandos
 
         private void frmPaciente_Load(object sender, EventArgs e)
-        {           
+        {
             MostraParametros();
             CarregarGrid();
             if (dgvPaciente.RowCount <= 0)
@@ -246,12 +246,10 @@ namespace Apresentacao_Usuario
                 btnCorrigir.Enabled = false;
                 btnCorrigirJantar.Enabled = false;
                 btnCorrigirCeia.Enabled = false;
-            }            
+            }
             CapCelulaParametros();
             lblcabecalho.Text = "Parâmetros Clicêmicos de Nicolle Bueno Cordovil Bruno do Mês: " + DateTime.Now.Month.ToString() + " de " + DateTime.Now.Year.ToString();
 
-
-           // this.reportViewer1.RefreshReport();
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
@@ -277,13 +275,26 @@ namespace Apresentacao_Usuario
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
-            {
+        {
             btnCorrigir.Enabled = true;
             btnCorrigirJantar.Enabled = true;
             btnCorrigirCeia.Enabled = true;
             btnCorrigirLanche.Enabled = true;
             // Café
-            if (int.Parse(txtCafe.Text) >= int.Parse(txtParam2.Text.ToString()) && int.Parse(txtCafe.Text) <= int.Parse(txtParam2_.Text.ToString()))
+            if (int.Parse(txtCafe.Text) >= int.Parse(txtParam1.Text.ToString()) && int.Parse(txtCafe.Text) <= int.Parse(txtParam1_.Text.ToString()))
+            {
+                MessageBox.Show("Glicose antes do café = " + txtCafe.Text + " Corrigir com 01 (UMA) dose de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Inserir();
+                btnInserir.Enabled = false;
+                btnDeletar.Enabled = false;
+                Atualizar();
+                //Linha de código abaixo, serve para rolagem automática do Scrool do DataGridView.
+                dgvPaciente.FirstDisplayedScrollingRowIndex = dgvPaciente.RowCount - 1;
+                Trava_Campos();
+                return;
+            }
+
+            else if (int.Parse(txtCafe.Text) >= int.Parse(txtParam2.Text.ToString()) && int.Parse(txtCafe.Text) <= int.Parse(txtParam2_.Text.ToString()))
             {
                 MessageBox.Show("Glicose antes do café = " + txtCafe.Text + " Corrigir com 01 (UMA) dose de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Inserir();
@@ -350,7 +361,7 @@ namespace Apresentacao_Usuario
 
             else if (int.Parse(txtCafe.Text) < int.Parse(txtParam1.Text.ToString()))
             {
-                MessageBox.Show("Glicose antes do café = " + txtCafe.Text + " HIPOGLICEMIA - REPOR AÇUCARES e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Glicose antes do café = " + txtCafe.Text + " HIPOGLICEMIA  ABAIXO DE (60) !!!", "ATENÇÃO, MUITO PERTO OU HIPOGLICEMIA DETECTADA !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Inserir();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
@@ -361,22 +372,19 @@ namespace Apresentacao_Usuario
                 return;
             }
 
-            else if (int.Parse(txtCafe.Text) >= int.Parse(txtParam1.Text.ToString()) && int.Parse(txtCafe.Text) <= int.Parse(txtParam1_.Text.ToString()))
+            else
             {
                 // AQUI QUANDO GLICOSE NORMAL.
-                //==================================
+                /*==================================
                 Inserir();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
                 Atualizar();
                 //Linha de código abaixo, serve para rolagem automática do Scrool do DataGridView.
                 dgvPaciente.FirstDisplayedScrollingRowIndex = dgvPaciente.RowCount - 1;
-                Trava_Campos();
+                Trava_Campos();*/
             }
-            else
-            {
-                //
-            }
+
         }
 
         private void txtObs_Leave(object sender, EventArgs e)
@@ -433,7 +441,19 @@ namespace Apresentacao_Usuario
         {
             // Almoço     
             Trava_Campos();
-            if (int.Parse(txtAlmoco.Text) >= int.Parse(txtParam2.Text.ToString()) && int.Parse(txtAlmoco.Text) <= int.Parse(txtParam2_.Text.ToString()))
+            if (int.Parse(txtAlmoco.Text) >= int.Parse(txtParam1.Text.ToString()) && int.Parse(txtAlmoco.Text) <= int.Parse(txtParam1_.Text.ToString()))
+            {
+                MessageBox.Show("Glicose antes do Almoço = " + txtAlmoco.Text + "  Este Parâmetro Antes do Almoço não necessita correção, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Alterar();
+                btnInserir.Enabled = false;
+                btnDeletar.Enabled = false;
+                Atualizar();
+                //Linha de código abaixo, serve para rolagem automática do Scrool do DataGridView.
+                dgvPaciente.FirstDisplayedScrollingRowIndex = dgvPaciente.RowCount - 1;
+                Trava_Campos();
+                return;
+            }
+            else if (int.Parse(txtAlmoco.Text) >= int.Parse(txtParam2.Text.ToString()) && int.Parse(txtAlmoco.Text) <= int.Parse(txtParam2_.Text.ToString()))
             {
                 MessageBox.Show("Glicose antes do Almoço = " + txtAlmoco.Text + " Corrigir com 01 (UMA) dose de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Alterar();
@@ -483,7 +503,7 @@ namespace Apresentacao_Usuario
 
             else if (int.Parse(txtAlmoco.Text) >= int.Parse(txtParam6.Text.ToString()) && int.Parse(txtAlmoco.Text) <= int.Parse(txtParam6_.Text.ToString()))
             {
-                MessageBox.Show("Glicose antes do Almoço = " + txtAlmoco.Text + " Corrigir com 04 (QUATRO) doses de insulina - CORRER PARA HOSPITAL !!!!", "PERIGO !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Glicose antes do Almoço = " + txtAlmoco.Text + " Corrigir com 04 (QUATRO) doses de insulina - ALERTA PARA HOSPITAL !!!!", "PERIGO !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
@@ -492,34 +512,32 @@ namespace Apresentacao_Usuario
                 dgvPaciente.FirstDisplayedScrollingRowIndex = dgvPaciente.RowCount - 1;
                 return;
             }
+
 
             else if (int.Parse(txtAlmoco.Text) < int.Parse(txtParam1.Text.ToString()))
             {
-                MessageBox.Show("Glicose antes do Almoço = " + txtAlmoco.Text + " HIPOGLICEMIA - REPOR AÇUCARES e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Glicose antes do Almoço = " + txtAlmoco.Text + " HIPOGLICEMIA  ABAIXO DE (60) !!!", "ATENÇÃO, MUITO PERTO OU HIPOGLICEMIA DETECTADA !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
                 Atualizar();
                 //Linha de código abaixo, serve para rolagem automática do Scrool do DataGridView.
                 dgvPaciente.FirstDisplayedScrollingRowIndex = dgvPaciente.RowCount - 1;
+                Trava_Campos();
                 return;
-            }
-
-            else if (int.Parse(txtAlmoco.Text) >= int.Parse(txtParam1.Text.ToString()) && int.Parse(txtAlmoco.Text) <= int.Parse(txtParam1_.Text.ToString()))
-            {
-                // AQUI QUANDO GLICOSE NORMAL.
-                //==================================
-                Alterar();
-                btnInserir.Enabled = false;
-                btnDeletar.Enabled = false;
-                Atualizar();
-                //Linha de código abaixo, serve para rolagem automática do Scrool do DataGridView.
-                dgvPaciente.FirstDisplayedScrollingRowIndex = dgvPaciente.RowCount - 1;
             }
 
             else
             {
-                //
+                // AQUI QUANDO GLICOSE NORMAL.
+                /*==================================
+                Inserir();
+                btnInserir.Enabled = false;
+                btnDeletar.Enabled = false;
+                Atualizar();
+                //Linha de código abaixo, serve para rolagem automática do Scrool do DataGridView.
+                dgvPaciente.FirstDisplayedScrollingRowIndex = dgvPaciente.RowCount - 1;
+                Trava_Campos();*/
             }
         }
 
@@ -548,7 +566,20 @@ namespace Apresentacao_Usuario
         {
             // Jantar
             Trava_Campos();
-            if (int.Parse(txtJantar.Text) >= int.Parse(txtParam2.Text.ToString()) && int.Parse(txtJantar.Text) <= int.Parse(txtParam2_.Text.ToString()))
+            if (int.Parse(txtJantar.Text) >= int.Parse(txtParam1.Text.ToString()) && int.Parse(txtJantar.Text) <= int.Parse(txtParam1_.Text.ToString()))
+            {
+                MessageBox.Show("Glicose antes do Jantar = " + txtJantar.Text + " Corrigir com 01 (UMA) dose de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Alterar();
+                btnInserir.Enabled = false;
+                btnDeletar.Enabled = false;
+                Atualizar();
+                //Linha de código abaixo, serve para rolagem automática do Scrool do DataGridView.
+                dgvPaciente.FirstDisplayedScrollingRowIndex = dgvPaciente.RowCount - 1;
+                Trava_Campos();
+                return;
+            }
+
+            else if (int.Parse(txtJantar.Text) >= int.Parse(txtParam2.Text.ToString()) && int.Parse(txtJantar.Text) <= int.Parse(txtParam2_.Text.ToString()))
             {
                 MessageBox.Show("Glicose antes do Jantar = " + txtJantar.Text + " Corrigir com 01 (UMA) dose de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Alterar();
@@ -598,7 +629,7 @@ namespace Apresentacao_Usuario
 
             else if (int.Parse(txtJantar.Text) >= int.Parse(txtParam6.Text.ToString()) && int.Parse(txtJantar.Text) <= int.Parse(txtParam6_.Text.ToString()))
             {
-                MessageBox.Show("Glicose antes do Jantar = " + txtJantar.Text + " Corrigir com 04 (QUATRO) doses de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "PERIGO !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Glicose antes do Jantar = " + txtJantar.Text + "Corrigir com 04 (QUATRO) doses de insulina - ALERTA PARA HOSPITAL !!!!", "PERIGO !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
@@ -607,35 +638,32 @@ namespace Apresentacao_Usuario
                 dgvPaciente.FirstDisplayedScrollingRowIndex = dgvPaciente.RowCount - 1;
                 return;
             }
+
 
             else if (int.Parse(txtJantar.Text) < int.Parse(txtParam1.Text.ToString()))
             {
-                MessageBox.Show("Glicose antes do Jantar = " + txtJantar.Text + " HIPOGLICEMIA - REPOR AÇUCARES e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Glicose antes do Jantar = " + txtJantar.Text + " HIPOGLICEMIA  ABAIXO DE (60) !!!", "ATENÇÃO, MUITO PERTO OU HIPOGLICEMIA DETECTADA !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
                 Atualizar();
                 //Linha de código abaixo, serve para rolagem automática do Scrool do DataGridView.
                 dgvPaciente.FirstDisplayedScrollingRowIndex = dgvPaciente.RowCount - 1;
-                return;
-            }
-
-            else if (int.Parse(txtJantar.Text) >= int.Parse(txtParam1.Text.ToString()) && int.Parse(txtJantar.Text) <= int.Parse(txtParam1_.Text.ToString()))
-            {
-                // AQUI QUANDO GLICOSE NORMAL.
-                //==================================
-                Alterar();
-                btnInserir.Enabled = false;
-                btnDeletar.Enabled = false;
-                Atualizar();
-                //Linha de código abaixo, serve para rolagem automática do Scrool do DataGridView.
-                dgvPaciente.FirstDisplayedScrollingRowIndex = dgvPaciente.RowCount - 1;
+                Trava_Campos();
                 return;
             }
 
             else
             {
-                //
+                // AQUI QUANDO GLICOSE NORMAL.
+                /*==================================
+                Inserir();
+                btnInserir.Enabled = false;
+                btnDeletar.Enabled = false;
+                Atualizar();
+                //Linha de código abaixo, serve para rolagem automática do Scrool do DataGridView.
+                dgvPaciente.FirstDisplayedScrollingRowIndex = dgvPaciente.RowCount - 1;
+                Trava_Campos();*/
             }
         }
 
@@ -643,7 +671,20 @@ namespace Apresentacao_Usuario
         {
             // Ceia
             Trava_Campos();
-            if (int.Parse(txtCeia.Text) >= int.Parse(txtParam2.Text.ToString()) && int.Parse(txtCeia.Text) <= int.Parse(txtParam2_.Text.ToString()))
+            if (int.Parse(txtCeia.Text) >= int.Parse(txtParam1.Text.ToString()) && int.Parse(txtCeia.Text) <= int.Parse(txtParam1_.Text.ToString()))
+            {
+                MessageBox.Show("Glicose antes da Ceia = " + txtCeia.Text + " Este Parâmetro Antes CEIA não necessita correção, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Alterar();
+                btnInserir.Enabled = false;
+                btnDeletar.Enabled = false;
+                Atualizar();
+                //Linha de código abaixo, serve para rolagem automática do Scrool do DataGridView.
+                dgvPaciente.FirstDisplayedScrollingRowIndex = dgvPaciente.RowCount - 1;
+                Trava_Campos();
+                return;
+            }
+
+            else if (int.Parse(txtCeia.Text) >= int.Parse(txtParam2.Text.ToString()) && int.Parse(txtCeia.Text) <= int.Parse(txtParam2_.Text.ToString()))
             {
                 MessageBox.Show("Glicose antes da Ceia = " + txtCeia.Text + " Este Parâmetro Antes CEIA não necessita correção, Colocar no campo OBSERVAÇÕES !!!", "AVISO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Alterar();
@@ -693,7 +734,7 @@ namespace Apresentacao_Usuario
 
             else if (int.Parse(txtCeia.Text) >= int.Parse(txtParam6.Text.ToString()) && int.Parse(txtCeia.Text) <= int.Parse(txtParam6_.Text.ToString()))
             {
-                MessageBox.Show("Glicose antes da Ceia = " + txtCeia.Text + " Corrigir com 04 (QUATRO) doses de insulina - CORRER PARA HOSPITAL !!!", "PERIGO !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Glicose antes da Ceia = " + txtCeia.Text + " Corrigir com 04 (QUATRO) doses de insulina - ALERTA PARA HOSPITAL !!!", "PERIGO !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
@@ -702,35 +743,30 @@ namespace Apresentacao_Usuario
                 dgvPaciente.FirstDisplayedScrollingRowIndex = dgvPaciente.RowCount - 1;
                 return;
             }
-
             else if (int.Parse(txtCeia.Text) < int.Parse(txtParam1.Text.ToString()))
             {
-                MessageBox.Show("Glicose antes da Ceia = " + txtCeia.Text  + " HIPOGLICEMIA - REPOR AÇUCARES e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Glicose antes da Ceia = " + txtCeia.Text + " HIPOGLICEMIA  ABAIXO DE (60) !!!", "ATENÇÃO, MUITO PERTO OU HIPOGLICEMIA DETECTADA !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
                 Atualizar();
                 //Linha de código abaixo, serve para rolagem automática do Scrool do DataGridView.
                 dgvPaciente.FirstDisplayedScrollingRowIndex = dgvPaciente.RowCount - 1;
-                return;
-            }
-
-            else if (int.Parse(txtCeia.Text) >= int.Parse(txtParam1.Text.ToString()) && int.Parse(txtCeia.Text) <= int.Parse(txtParam1_.Text.ToString()))
-            {
-                // AQUI QUANDO GLICOSE NORMAL.
-                //==================================
-                Alterar();
-                btnInserir.Enabled = false;
-                btnDeletar.Enabled = false;
-                Atualizar();
-                //Linha de código abaixo, serve para rolagem automática do Scrool do DataGridView.
-                dgvPaciente.FirstDisplayedScrollingRowIndex = dgvPaciente.RowCount - 1;
+                Trava_Campos();
                 return;
             }
 
             else
             {
-                //
+                // AQUI QUANDO GLICOSE NORMAL.
+                /*==================================
+                Inserir();
+                btnInserir.Enabled = false;
+                btnDeletar.Enabled = false;
+                Atualizar();
+                //Linha de código abaixo, serve para rolagem automática do Scrool do DataGridView.
+                dgvPaciente.FirstDisplayedScrollingRowIndex = dgvPaciente.RowCount - 1;
+                Trava_Campos();*/
             }
         }
 
@@ -740,7 +776,7 @@ namespace Apresentacao_Usuario
             btnCorrigirJantar.Enabled = false;
             btnCorrigirCeia.Enabled = false;
             btnCorrigirLanche.Enabled = false;
-            DialogResult perg = MessageBox.Show("ATENÇÃO: Antes de Fechar o Mapa do mês " + DateTime.Now.Month.ToString() + " NÃO SE ESQUEÇA DE IMPRIMIR E/OU SALVAR O MAPA.                  " + "Deseja Fechar O Mes " + DateTime.Now.Month.ToString() +" Sim ou Não ?", "Fechamento Mapa Mensal", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult perg = MessageBox.Show("ATENÇÃO: Antes de Fechar o Mapa do mês " + DateTime.Now.Month.ToString() + " NÃO SE ESQUEÇA DE IMPRIMIR E/OU SALVAR O MAPA.                  " + "Deseja Fechar O Mes " + DateTime.Now.Month.ToString() + " Sim ou Não ?", "Fechamento Mapa Mensal", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (perg != DialogResult.Yes)
             {
                 MessageBox.Show("OK, Mantendo o Mês " + DateTime.Now.Month.ToString() + " em Aberto !!!", "Fechamento Mapa Mensal", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -775,7 +811,20 @@ namespace Apresentacao_Usuario
         {
             // Lanche    
             Trava_Campos();
-            if (int.Parse(txtLanche.Text) >= int.Parse(txtParam2.Text.ToString()) && int.Parse(txtLanche.Text) <= int.Parse(txtParam2_.Text.ToString()))
+            if (int.Parse(txtLanche.Text) >= int.Parse(txtParam1.Text.ToString()) && int.Parse(txtLanche.Text) <= int.Parse(txtParam1_.Text.ToString()))
+            {
+                MessageBox.Show("Glicose antes do Lanche = " + txtLanche.Text + "  Este Parâmetro Antes do LANCHE não necessita correção, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Alterar();
+                btnInserir.Enabled = false;
+                btnDeletar.Enabled = false;
+                Atualizar();
+                //Linha de código abaixo, serve para rolagem automática do Scrool do DataGridView.
+                dgvPaciente.FirstDisplayedScrollingRowIndex = dgvPaciente.RowCount - 1;
+                Trava_Campos();
+                return;
+            }
+
+            else if (int.Parse(txtLanche.Text) >= int.Parse(txtParam2.Text.ToString()) && int.Parse(txtLanche.Text) <= int.Parse(txtParam2_.Text.ToString()))
             {
                 MessageBox.Show("Glicose antes do Lanche = " + txtLanche.Text + " Corrigir com 01 (UMA) dose de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Alterar();
@@ -825,7 +874,7 @@ namespace Apresentacao_Usuario
 
             else if (int.Parse(txtLanche.Text) >= int.Parse(txtParam6.Text.ToString()) && int.Parse(txtLanche.Text) <= int.Parse(txtParam6_.Text.ToString()))
             {
-                MessageBox.Show("Glicose antes do Lanche = " + txtLanche.Text + " Corrigir com 04 (QUATRO) doses de insulina - CORRER PARA HOSPITAL !!!!", "PERIGO !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Glicose antes do Lanche = " + txtLanche.Text + " Corrigir com 04 (QUATRO) doses de insulina - ALERTA PARA HOSPITAL !!!!", "PERIGO !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
@@ -837,31 +886,28 @@ namespace Apresentacao_Usuario
 
             else if (int.Parse(txtLanche.Text) < int.Parse(txtParam1.Text.ToString()))
             {
-                MessageBox.Show("Glicose antes do Lanche = " + txtLanche.Text + " HIPOGLICEMIA - REPOR AÇUCARES e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Glicose antes do Lanche = " + txtLanche.Text + " HIPOGLICEMIA  ABAIXO DE (60) !!!", "ATENÇÃO, MUITO PERTO OU HIPOGLICEMIA DETECTADA !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
                 Atualizar();
                 //Linha de código abaixo, serve para rolagem automática do Scrool do DataGridView.
                 dgvPaciente.FirstDisplayedScrollingRowIndex = dgvPaciente.RowCount - 1;
+                Trava_Campos();
                 return;
-            }
-
-            else if (int.Parse(txtLanche.Text) >= int.Parse(txtParam1.Text.ToString()) && int.Parse(txtLanche.Text) <= int.Parse(txtParam1_.Text.ToString()))
-            {
-                // AQUI QUANDO GLICOSE NORMAL.
-                //==================================
-                Alterar();
-                btnInserir.Enabled = false;
-                btnDeletar.Enabled = false;
-                Atualizar();
-                //Linha de código abaixo, serve para rolagem automática do Scrool do DataGridView.
-                dgvPaciente.FirstDisplayedScrollingRowIndex = dgvPaciente.RowCount - 1;
             }
 
             else
             {
-                //
+                // AQUI QUANDO GLICOSE NORMAL.
+                /*==================================
+                Inserir();
+                btnInserir.Enabled = false;
+                btnDeletar.Enabled = false;
+                Atualizar();
+                //Linha de código abaixo, serve para rolagem automática do Scrool do DataGridView.
+                dgvPaciente.FirstDisplayedScrollingRowIndex = dgvPaciente.RowCount - 1;
+                Trava_Campos();*/
             }
         }
     }
