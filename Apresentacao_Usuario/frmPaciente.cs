@@ -359,9 +359,12 @@ namespace Apresentacao_Usuario
                 return;
             }
 
-            else if (int.Parse(txtCafe.Text) < int.Parse(txtParam1.Text.ToString()))
+            else if (int.Parse(txtCafe.Text) < int.Parse("60".ToString()))
             {
-                MessageBox.Show("Glicose antes do café = " + txtCafe.Text + " HIPOGLICEMIA  ABAIXO DE (60) !!!", "ATENÇÃO, MUITO PERTO OU HIPOGLICEMIA DETECTADA !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                // AQUI HIPOGLICEMIA.
+                //==================================
+                MessageBox.Show("Glicose antes do café = " + txtCafe.Text + " Detectado HIPOGLICEMIA -> Repor Açucar Urgente !!!", "PERIGO !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Inserir();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
@@ -372,19 +375,27 @@ namespace Apresentacao_Usuario
                 return;
             }
 
-            else
+            else if (int.Parse(txtCafe.Text) == int.Parse("60".ToString()) || int.Parse(txtCafe.Text) == int.Parse("61".ToString ()) ||
+                int.Parse(txtCafe.Text) == int.Parse("62".ToString()) || int.Parse(txtCafe.Text) == int.Parse("63".ToString()) ||
+                int.Parse(txtCafe.Text) == int.Parse("64".ToString()) || int.Parse(txtCafe.Text) == int.Parse ("65".ToString()) ||
+                int.Parse(txtCafe.Text) == int.Parse("66".ToString()) || int.Parse(txtCafe.Text) == int.Parse("67".ToString()) ||
+                int.Parse(txtCafe.Text) == int.Parse("68".ToString()) || int.Parse(txtCafe.Text) == int.Parse("69".ToString()))
             {
                 // AQUI QUANDO GLICOSE NORMAL.
-                /*==================================
+                //==================================
                 Inserir();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
                 Atualizar();
                 //Linha de código abaixo, serve para rolagem automática do Scrool do DataGridView.
                 dgvPaciente.FirstDisplayedScrollingRowIndex = dgvPaciente.RowCount - 1;
-                Trava_Campos();*/
+                Trava_Campos();
             }
 
+            else
+            {
+                //
+            }
         }
 
         private void txtObs_Leave(object sender, EventArgs e)
@@ -513,10 +524,11 @@ namespace Apresentacao_Usuario
                 return;
             }
 
-
-            else if (int.Parse(txtAlmoco.Text) < int.Parse(txtParam1.Text.ToString()))
+            else if (int.Parse(txtAlmoco.Text) < int.Parse("60".ToString()))
             {
-                MessageBox.Show("Glicose antes do Almoço = " + txtAlmoco.Text + " HIPOGLICEMIA  ABAIXO DE (60) !!!", "ATENÇÃO, MUITO PERTO OU HIPOGLICEMIA DETECTADA !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // AQUI HIPOGLICEMIA.
+                //==================================
+                MessageBox.Show("Glicose antes do Almoço = " + txtAlmoco.Text + " Detectado HIPOGLICEMIA -> Repor Açucar Urgente !!!", "PERIGO !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
@@ -527,17 +539,26 @@ namespace Apresentacao_Usuario
                 return;
             }
 
-            else
+            else if (int.Parse(txtAlmoco.Text) == int.Parse("60".ToString()) || int.Parse(txtAlmoco.Text) == int.Parse("61".ToString()) ||
+                int.Parse(txtAlmoco.Text) == int.Parse("62".ToString()) || int.Parse(txtAlmoco.Text) == int.Parse("63".ToString()) ||
+                int.Parse(txtAlmoco.Text) == int.Parse("64".ToString()) || int.Parse(txtAlmoco.Text) == int.Parse("65".ToString()) ||
+                int.Parse(txtAlmoco.Text) == int.Parse("66".ToString()) || int.Parse(txtAlmoco.Text) == int.Parse("67".ToString()) ||
+                int.Parse(txtAlmoco.Text) == int.Parse("68".ToString()) || int.Parse(txtAlmoco.Text) == int.Parse("69".ToString()))
             {
                 // AQUI QUANDO GLICOSE NORMAL.
-                /*==================================
-                Inserir();
+                //==================================
+                Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
                 Atualizar();
                 //Linha de código abaixo, serve para rolagem automática do Scrool do DataGridView.
                 dgvPaciente.FirstDisplayedScrollingRowIndex = dgvPaciente.RowCount - 1;
-                Trava_Campos();*/
+                Trava_Campos();
+            }
+
+            else
+            {
+                //
             }
         }
 
@@ -639,10 +660,11 @@ namespace Apresentacao_Usuario
                 return;
             }
 
-
-            else if (int.Parse(txtJantar.Text) < int.Parse(txtParam1.Text.ToString()))
+            else if (int.Parse(txtJantar.Text) < int.Parse("60".ToString()))
             {
-                MessageBox.Show("Glicose antes do Jantar = " + txtJantar.Text + " HIPOGLICEMIA  ABAIXO DE (60) !!!", "ATENÇÃO, MUITO PERTO OU HIPOGLICEMIA DETECTADA !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // AQUI HIPOGLICEMIA.
+                //==================================
+                MessageBox.Show("Glicose antes do Jantar = " + txtJantar.Text + " Detectado HIPOGLICEMIA -> Repor Açucar Urgente !!!", "PERIGO !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
@@ -653,17 +675,26 @@ namespace Apresentacao_Usuario
                 return;
             }
 
-            else
+            else if (int.Parse(txtJantar.Text) == int.Parse("60".ToString()) || int.Parse(txtJantar.Text) == int.Parse("61".ToString()) ||
+                int.Parse(txtJantar.Text) == int.Parse("62".ToString()) || int.Parse(txtJantar.Text) == int.Parse("63".ToString()) ||
+                int.Parse(txtJantar.Text) == int.Parse("64".ToString()) || int.Parse(txtJantar.Text) == int.Parse("65".ToString()) ||
+                int.Parse(txtJantar.Text) == int.Parse("66".ToString()) || int.Parse(txtJantar.Text) == int.Parse("67".ToString()) ||
+                int.Parse(txtJantar.Text) == int.Parse("68".ToString()) || int.Parse(txtJantar.Text) == int.Parse("69".ToString()))
             {
                 // AQUI QUANDO GLICOSE NORMAL.
-                /*==================================
-                Inserir();
+                //==================================
+                Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
                 Atualizar();
                 //Linha de código abaixo, serve para rolagem automática do Scrool do DataGridView.
                 dgvPaciente.FirstDisplayedScrollingRowIndex = dgvPaciente.RowCount - 1;
-                Trava_Campos();*/
+                Trava_Campos();
+            }
+
+            else
+            {
+                //
             }
         }
 
@@ -743,9 +774,13 @@ namespace Apresentacao_Usuario
                 dgvPaciente.FirstDisplayedScrollingRowIndex = dgvPaciente.RowCount - 1;
                 return;
             }
-            else if (int.Parse(txtCeia.Text) < int.Parse(txtParam1.Text.ToString()))
+
+
+            else if (int.Parse(txtCeia.Text) < int.Parse("60".ToString()))
             {
-                MessageBox.Show("Glicose antes da Ceia = " + txtCeia.Text + " HIPOGLICEMIA  ABAIXO DE (60) !!!", "ATENÇÃO, MUITO PERTO OU HIPOGLICEMIA DETECTADA !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // AQUI HIPOGLICEMIA.
+                //==================================
+                MessageBox.Show("Glicose antes da Ceia = " + txtCeia.Text + " Detectado HIPOGLICEMIA -> Repor Açucar Urgente !!!", "PERIGO !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
@@ -756,17 +791,26 @@ namespace Apresentacao_Usuario
                 return;
             }
 
-            else
+            else if (int.Parse(txtCeia.Text) == int.Parse("60".ToString()) || int.Parse(txtCeia.Text) == int.Parse("61".ToString()) ||
+                int.Parse(txtCeia.Text) == int.Parse("62".ToString()) || int.Parse(txtCeia.Text) == int.Parse("63".ToString()) ||
+                int.Parse(txtCeia.Text) == int.Parse("64".ToString()) || int.Parse(txtCeia.Text) == int.Parse("65".ToString()) ||
+                int.Parse(txtCeia.Text) == int.Parse("66".ToString()) || int.Parse(txtCeia.Text) == int.Parse("67".ToString()) ||
+                int.Parse(txtCeia.Text) == int.Parse("68".ToString()) || int.Parse(txtCeia.Text) == int.Parse("69".ToString()))
             {
                 // AQUI QUANDO GLICOSE NORMAL.
-                /*==================================
-                Inserir();
+                //==================================
+                Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
                 Atualizar();
                 //Linha de código abaixo, serve para rolagem automática do Scrool do DataGridView.
                 dgvPaciente.FirstDisplayedScrollingRowIndex = dgvPaciente.RowCount - 1;
-                Trava_Campos();*/
+                Trava_Campos();
+            }
+
+            else
+            {
+                //
             }
         }
 
@@ -884,9 +928,12 @@ namespace Apresentacao_Usuario
                 return;
             }
 
-            else if (int.Parse(txtLanche.Text) < int.Parse(txtParam1.Text.ToString()))
+            else if (int.Parse(txtLanche.Text) < int.Parse("60".ToString()))
             {
-                MessageBox.Show("Glicose antes do Lanche = " + txtLanche.Text + " HIPOGLICEMIA  ABAIXO DE (60) !!!", "ATENÇÃO, MUITO PERTO OU HIPOGLICEMIA DETECTADA !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                // AQUI HIPOGLICEMIA.
+                //==================================
+                MessageBox.Show("Glicose antes do Lanche = " + txtLanche.Text + " Detectado HIPOGLICEMIA -> Repor Açucar Urgente !!!", "PERIGO !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
@@ -897,17 +944,26 @@ namespace Apresentacao_Usuario
                 return;
             }
 
-            else
+            else if (int.Parse(txtLanche.Text) == int.Parse("60".ToString()) || int.Parse(txtLanche.Text) == int.Parse("61".ToString()) ||
+                int.Parse(txtLanche.Text) == int.Parse("62".ToString()) || int.Parse(txtLanche.Text) == int.Parse("63".ToString()) ||
+                int.Parse(txtLanche.Text) == int.Parse("64".ToString()) || int.Parse(txtLanche.Text) == int.Parse("65".ToString()) ||
+                int.Parse(txtLanche.Text) == int.Parse("66".ToString()) || int.Parse(txtLanche.Text) == int.Parse("67".ToString()) ||
+                int.Parse(txtLanche.Text) == int.Parse("68".ToString()) || int.Parse(txtLanche.Text) == int.Parse("69".ToString()))
             {
                 // AQUI QUANDO GLICOSE NORMAL.
-                /*==================================
-                Inserir();
+                //==================================
+                Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
                 Atualizar();
                 //Linha de código abaixo, serve para rolagem automática do Scrool do DataGridView.
                 dgvPaciente.FirstDisplayedScrollingRowIndex = dgvPaciente.RowCount - 1;
-                Trava_Campos();*/
+                Trava_Campos();
+            }
+
+            else
+            {
+                //
             }
         }
     }
