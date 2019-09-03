@@ -20,7 +20,7 @@ namespace Apresentacao_Usuario
         public frmPaciente()
         {
             InitializeComponent();
-            dgvPaciente.AutoGenerateColumns = false;
+            dgvPaciente.AutoGenerateColumns = 
             dgvCorrecao.AutoGenerateColumns = false;
         }
 
