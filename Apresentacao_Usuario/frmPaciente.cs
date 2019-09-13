@@ -454,7 +454,7 @@ namespace Apresentacao_Usuario
             Trava_Campos();
             if (int.Parse(txtAlmoco.Text) >= int.Parse(txtParam1.Text.ToString()) && int.Parse(txtAlmoco.Text) <= int.Parse(txtParam1_.Text.ToString()))
             {
-                MessageBox.Show("Glicose antes do Almoço = " + txtAlmoco.Text + "  Este Parâmetro Antes do Almoço não necessita correção, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Glicose antes do Almoço = " + txtAlmoco.Text + " Corrigir com 01 (UMA) dose de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
@@ -857,7 +857,7 @@ namespace Apresentacao_Usuario
             Trava_Campos();
             if (int.Parse(txtLanche.Text) >= int.Parse(txtParam1.Text.ToString()) && int.Parse(txtLanche.Text) <= int.Parse(txtParam1_.Text.ToString()))
             {
-                MessageBox.Show("Glicose antes do Lanche = " + txtLanche.Text + "  Este Parâmetro Antes do LANCHE não necessita correção, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Glicose antes do Lanche = " + txtLanche.Text + " Corrigir com 01 (UMA) dose de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
