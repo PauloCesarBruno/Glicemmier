@@ -296,7 +296,7 @@ namespace Apresentacao_Usuario
 
             else if (int.Parse(txtCafe.Text) >= int.Parse(txtParam2.Text.ToString()) && int.Parse(txtCafe.Text) <= int.Parse(txtParam2_.Text.ToString()))
             {
-                MessageBox.Show("Glicose antes do café = " + txtCafe.Text + " Corrigir com 01 (UMA) dose de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Glicose antes do café = " + txtCafe.Text + " Corrigir com 02 (DUAS) doses de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Inserir();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
@@ -309,7 +309,7 @@ namespace Apresentacao_Usuario
 
             else if (int.Parse(txtCafe.Text) >= int.Parse(txtParam3.Text.ToString()) && int.Parse(txtCafe.Text) <= int.Parse(txtParam3_.Text.ToString()))
             {
-                MessageBox.Show("Glicose antes do café  = " + txtCafe.Text + " Corrigir com 01 (UMA) dose de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Glicose antes do café  = " + txtCafe.Text + " Corrigir com 02 (DUAS) doses de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Inserir();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
@@ -614,7 +614,7 @@ namespace Apresentacao_Usuario
 
             else if (int.Parse(txtJantar.Text) >= int.Parse(txtParam3.Text.ToString()) && int.Parse(txtJantar.Text) <= int.Parse(txtParam3_.Text.ToString()))
             {
-                MessageBox.Show("Glicose antes do Jantar = " + txtJantar.Text + " Corrigir com 01 (UMA) doses de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Glicose antes do Jantar = " + txtJantar.Text + " Corrigir com 02 (DUAS) doses de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
