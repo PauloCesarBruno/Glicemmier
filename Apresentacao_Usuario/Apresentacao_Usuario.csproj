@@ -121,6 +121,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="rptMapa.rdlc" />
     <EmbeddedResource Include="rptParametros.rdlc" />
@@ -165,6 +166,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Glicemmer.ico" />
+    <None Include="Resources\Nick.jpg" />
+    <None Include="Resources\criancamulher.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
