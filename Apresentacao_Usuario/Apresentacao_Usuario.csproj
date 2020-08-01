@@ -166,7 +166,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Glicemmer.ico" />
-    <None Include="Resources\Nick.jpg" />
     <None Include="Resources\criancamulher.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
