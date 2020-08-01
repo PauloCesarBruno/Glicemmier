@@ -155,16 +155,17 @@
             this.Dose_Jantar,
             this.Dose_Ceia,
             this.Observacoes});
-            this.dgvPaciente.Location = new System.Drawing.Point(32, 276);
+            this.dgvPaciente.Location = new System.Drawing.Point(32, 300);
             this.dgvPaciente.Name = "dgvPaciente";
             this.dgvPaciente.ReadOnly = true;
             dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.LightCyan;
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvPaciente.RowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvPaciente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPaciente.Size = new System.Drawing.Size(794, 196);
+            this.dgvPaciente.Size = new System.Drawing.Size(794, 172);
             this.dgvPaciente.TabIndex = 20000;
             this.dgvPaciente.TabStop = false;
+            this.dgvPaciente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPaciente_CellContentClick);
             this.dgvPaciente.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPaciente_CellEnter);
             // 
             // IdPaciente
@@ -305,7 +306,7 @@
             this.dgvCorrecao.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.dgvCorrecao.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvCorrecao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvCorrecao.Size = new System.Drawing.Size(389, 154);
+            this.dgvCorrecao.Size = new System.Drawing.Size(389, 178);
             this.dgvCorrecao.TabIndex = 10000;
             this.dgvCorrecao.TabStop = false;
             // 
@@ -453,7 +454,7 @@
             this.btnChamaForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnChamaForm.Font = new System.Drawing.Font("Monotype Corsiva", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChamaForm.ForeColor = System.Drawing.Color.Blue;
-            this.btnChamaForm.Location = new System.Drawing.Point(460, 160);
+            this.btnChamaForm.Location = new System.Drawing.Point(460, 166);
             this.btnChamaForm.Name = "btnChamaForm";
             this.btnChamaForm.Size = new System.Drawing.Size(309, 88);
             this.btnChamaForm.TabIndex = 70000;
@@ -1063,7 +1064,7 @@
             this.lblInfo.AutoSize = true;
             this.lblInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInfo.ForeColor = System.Drawing.Color.Red;
-            this.lblInfo.Location = new System.Drawing.Point(456, 126);
+            this.lblInfo.Location = new System.Drawing.Point(456, 128);
             this.lblInfo.Name = "lblInfo";
             this.lblInfo.Size = new System.Drawing.Size(307, 20);
             this.lblInfo.TabIndex = 70014;

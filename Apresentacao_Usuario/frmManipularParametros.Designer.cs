@@ -142,7 +142,7 @@
             this.dgvCorrecao.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvCorrecao.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvCorrecao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCorrecao.Size = new System.Drawing.Size(394, 156);
+            this.dgvCorrecao.Size = new System.Drawing.Size(394, 182);
             this.dgvCorrecao.TabIndex = 10001;
             this.dgvCorrecao.TabStop = false;
             this.dgvCorrecao.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCorrecao_CellEnter);
@@ -364,7 +364,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Location = new System.Drawing.Point(0, 358);
+            this.panel1.Location = new System.Drawing.Point(0, 402);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(754, 18);
             this.panel1.TabIndex = 70002;
@@ -400,7 +400,7 @@
             this.btnInserir_Parametros.ForeColor = System.Drawing.Color.Blue;
             this.btnInserir_Parametros.Image = ((System.Drawing.Image)(resources.GetObject("btnInserir_Parametros.Image")));
             this.btnInserir_Parametros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInserir_Parametros.Location = new System.Drawing.Point(9, 291);
+            this.btnInserir_Parametros.Location = new System.Drawing.Point(9, 317);
             this.btnInserir_Parametros.Name = "btnInserir_Parametros";
             this.btnInserir_Parametros.Size = new System.Drawing.Size(394, 26);
             this.btnInserir_Parametros.TabIndex = 70005;
@@ -554,7 +554,7 @@
             this.btnAtualizar.ForeColor = System.Drawing.Color.Blue;
             this.btnAtualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnAtualizar.Image")));
             this.btnAtualizar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnAtualizar.Location = new System.Drawing.Point(8, 320);
+            this.btnAtualizar.Location = new System.Drawing.Point(8, 346);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(395, 26);
             this.btnAtualizar.TabIndex = 70021;
@@ -577,7 +577,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(751, 375);
+            this.ClientSize = new System.Drawing.Size(751, 420);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.label8);
