@@ -902,13 +902,7 @@ namespace Apresentacao_Usuario
                 Atualizar();
                 txtBuscaDia.Focus();
             }
-        }
-
-        private void btnChamaForm_Click(object sender, EventArgs e)
-        {
-            frmManipularParametros fmp = new frmManipularParametros();
-            fmp.ShowDialog();
-        }
+        }          
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
@@ -1050,6 +1044,11 @@ namespace Apresentacao_Usuario
         }
 
         private void dgvPaciente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
 
         }
