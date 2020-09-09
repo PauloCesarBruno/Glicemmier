@@ -251,7 +251,7 @@ namespace Apresentacao_Usuario
             // CapCelulaParametros();
             lblcabecalho.Text = "Parâmetros Clicêmicos de Nicolle Bueno Cordovil Bruno do Mês: " + DateTime.Now.Month.ToString() + " de " + DateTime.Now.Year.ToString();
 
-        }
+            }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
