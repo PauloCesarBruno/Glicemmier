@@ -251,7 +251,8 @@ namespace Apresentacao_Usuario
             // CapCelulaParametros();
             lblcabecalho.Text = "Parâmetros Clicêmicos de Nicolle Bueno Cordovil Bruno do Mês: " + DateTime.Now.Month.ToString() + " de " + DateTime.Now.Year.ToString();
 
-           }
+            //this.reportViewer1.RefreshReport();
+        }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
@@ -752,7 +753,7 @@ namespace Apresentacao_Usuario
             Trava_Campos();
             if (int.Parse(txtCeia.Text) >= int.Parse("70") && int.Parse(txtCeia.Text) <= int.Parse("99"))
             {
-                MessageBox.Show("Glicose antes da Ceia = " + txtCeia.Text + " Esse Parâmetro antes da ceia não necessita de correção !!!, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Glicose antes da Ceia = " + txtCeia.Text + " Corrigir com 01 (UMA) dose de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
@@ -765,7 +766,7 @@ namespace Apresentacao_Usuario
 
             else if (int.Parse(txtCeia.Text) >= int.Parse("100") && int.Parse(txtCeia.Text) <= int.Parse("149"))
             {
-                MessageBox.Show("Glicose antes da Ceia = " + txtCeia.Text + " Corrigir com 01 (UMA) dose de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Glicose antes da Ceia = " + txtCeia.Text + " Corrigir com 02 (DUAS) doses de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
@@ -778,7 +779,7 @@ namespace Apresentacao_Usuario
 
             else if (int.Parse(txtCeia.Text) >= int.Parse("150") && int.Parse(txtCeia.Text) <= int.Parse("199"))
             {
-                MessageBox.Show("Glicose antes da Ceia = " + txtCeia.Text + " Corrigir com 01 (UMA) dose de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Glicose antes da Ceia = " + txtCeia.Text + " Corrigir com 03 (TRÊS) doses de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
@@ -791,7 +792,7 @@ namespace Apresentacao_Usuario
 
             else if (int.Parse(txtCeia.Text) >= int.Parse("200") && int.Parse(txtCeia.Text) <= int.Parse("299"))
             {
-                MessageBox.Show("Glicose antes da Ceia = " + txtCeia.Text + " Corrigir com 02 (DUAS) doses de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Glicose antes da Ceia = " + txtCeia.Text + " Corrigir com 04 (QUATRO) doses de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
@@ -804,7 +805,7 @@ namespace Apresentacao_Usuario
 
             else if (int.Parse(txtCeia.Text) >= int.Parse("300") && int.Parse(txtCeia.Text) <= int.Parse("399"))
             {
-                MessageBox.Show("Glicose antes da Ceia = " + txtCeia.Text + " Corrigir com 03 (TRÊS) doses de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Glicose antes da Ceia = " + txtCeia.Text + " Corrigir com 05 (CINCO) doses de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
@@ -817,7 +818,7 @@ namespace Apresentacao_Usuario
 
             else if (int.Parse(txtCeia.Text) >= int.Parse("400") && int.Parse(txtCeia.Text) <= int.Parse("499"))
             {
-                MessageBox.Show("Glicose antes da Ceia = " + txtCeia.Text + " Corrigir com 04 (QUATRO) doses de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Glicose antes da Ceia = " + txtCeia.Text + " Corrigir com 06 (SEIS) doses de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
@@ -830,7 +831,7 @@ namespace Apresentacao_Usuario
 
             else if (int.Parse(txtCeia.Text) >= int.Parse("500") && int.Parse(txtCeia.Text) <= int.Parse("599"))
             {
-                MessageBox.Show("Glicose antes da Ceia = " + txtCeia.Text + " Corrigir com 05 (CINCO) doses de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "PERIGO !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Glicose antes da Ceia = " + txtCeia.Text + " Corrigir com 07 (SETE) doses de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "PERIGO !!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
@@ -916,7 +917,7 @@ namespace Apresentacao_Usuario
             Trava_Campos();
             if (int.Parse(txtLanche.Text) >= int.Parse("70") && int.Parse(txtLanche.Text) <= int.Parse("99"))
             {
-                MessageBox.Show("Glicose antes do Lanche = " + txtLanche.Text + " Corrigir com 01 (UMA) dose de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Glicose antes do Lanche = " + txtLanche.Text + " Corrigir com 02 (DUAS) doses de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
@@ -929,7 +930,7 @@ namespace Apresentacao_Usuario
 
             else if (int.Parse(txtLanche.Text) >= int.Parse("100") && int.Parse(txtLanche.Text) <= int.Parse("149"))
             {
-                MessageBox.Show("Glicose antes do Lanche = " + txtLanche.Text + " Corrigir com 01 (UMA) dose de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Glicose antes do Lanche = " + txtLanche.Text + " Corrigir com 02 (DUAS) doses de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
@@ -942,7 +943,7 @@ namespace Apresentacao_Usuario
 
             else if (int.Parse(txtLanche.Text) >= int.Parse("150") && int.Parse(txtLanche.Text) <= int.Parse("199"))
             {
-                MessageBox.Show("Glicose antes do Lanche = " + txtLanche.Text + " Corrigir com 02 (DUAS) doses de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Glicose antes do Lanche = " + txtLanche.Text + " Corrigir com 03 (TRÊS) doses de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
@@ -955,7 +956,7 @@ namespace Apresentacao_Usuario
 
             else if (int.Parse(txtLanche.Text) >= int.Parse("200") && int.Parse(txtLanche.Text) <= int.Parse("299"))
             {
-                MessageBox.Show("Glicose antes do Lanche = " + txtLanche.Text + " Corrigir com 02 (DUAS) doses de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Glicose antes do Lanche = " + txtLanche.Text + " Corrigir com 03 (TRÊS) doses de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
@@ -968,7 +969,7 @@ namespace Apresentacao_Usuario
 
             else if (int.Parse(txtLanche.Text) >= int.Parse("300") && int.Parse(txtLanche.Text) <= int.Parse("399"))
             {
-                MessageBox.Show("Glicose antes do Lanche = " + txtLanche.Text + " Corrigir com 02 (DUAS) doses de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Glicose antes do Lanche = " + txtLanche.Text + " Corrigir com 03 (TRÊS) doses de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
@@ -981,7 +982,7 @@ namespace Apresentacao_Usuario
 
             else if (int.Parse(txtLanche.Text) >= int.Parse("400") && int.Parse(txtLanche.Text) <= int.Parse("499"))
             {
-                MessageBox.Show("Glicose antes do Lanche = " + txtLanche.Text + " Corrigir com 03 (TRÊS) doses de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Glicose antes do Lanche = " + txtLanche.Text + " Corrigir com 04 (QUATRO) doses de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
@@ -994,7 +995,7 @@ namespace Apresentacao_Usuario
 
             else if (int.Parse(txtLanche.Text) >= int.Parse("500") && int.Parse(txtLanche.Text) <= int.Parse("599"))
             {
-                MessageBox.Show("Glicose antes do  = " + txtLanche.Text + " Corrigir com 04 (QUATRO) doses de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Glicose antes do  = " + txtLanche.Text + " Corrigir com 05 (CINCO) doses de insulina e caso tenha esquecido, Colocar no campo OBSERVAÇÕES !!!", "ATENÇÃO !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Alterar();
                 btnInserir.Enabled = false;
                 btnDeletar.Enabled = false;
