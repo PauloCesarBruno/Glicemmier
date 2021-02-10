@@ -113,7 +113,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblInfo = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaciente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCorrecao)).BeginInit();
             this.panel.SuspendLayout();
@@ -960,21 +959,12 @@
             this.pictureBox2.TabIndex = 70015;
             this.pictureBox2.TabStop = false;
             // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Location = new System.Drawing.Point(2, 47);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(396, 246);
-            this.reportViewer1.TabIndex = 70016;
-            // 
             // frmPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(858, 701);
-            this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.panel1);
@@ -1081,6 +1071,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Antes_Ceia;
         private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }
